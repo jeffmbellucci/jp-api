@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  power_status: 0
+  capacity: 3
+
+two:
+  power_status: 0
+  capacity: 3
