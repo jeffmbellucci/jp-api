@@ -23,3 +23,9 @@ What I did not get to:
 (Cages on their power status and dinosaurs on species). I felt this was less important since getting a cage will show it's power status and all it's dinosaurs with attributes which could be parsed appropriately by the front-end.  I generally feel in most cases it is better to return more json data than less when the response is still relatively short.  Obviously, this would not hold true if we were returning 1000's of cages and dinosaurs, in which case filtering on the back end would be way more important.  However, I had to prioritize a few things for times sake, and I chose to leave this one out.  If I were to implement it, I would use `where` clauses, ie.```@cages.where(power_status: :active)```, ```@dinosaurs.where(species: :velociraptor)```, etc.
 
 #### I look forward to hearing your thoughts.  I hope you had a wonderful Christmas, and I wish you a happy new year.  Talk to you soon.  Best, Jeff
+
+#### I decided I would deploy this to Heroku so you can play with it live if you want. The root url goes to the cage index, so you can get a quick view of all the cage statuses, which  would think would be important, based on the movie plot. :)
+
+[All cage statuses](https://jurassic-api.herokuapp.com/)
+[First example cage](https://jurassic-api.herokuapp.com/cages/1)
+[First example dinosaur](https://jurassic-api.herokuapp.com/dinosaurs/1)
