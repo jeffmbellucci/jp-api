@@ -4,12 +4,13 @@
 - Database is Postgres.
 - There is an included `seeds.rb` file that can be run after DB setup/migration to populate the DB with all the required dinosaur species and some cages.
 
-- I got done with family Xmas obligations last night, and this is what I was able to get finished in about 2ish hours this afternoon:
+#### I got done with family Xmas obligations last night, and this is what I was able to get finished in about 2ish hours this afternoon:
 
 - Cages have a maximum capacity for how many dinosaurs it can hold.
 - Cages know how many dinosaurs are contained via `dinosaur_count` key in response body.
 - Cages have a power status of ACTIVE or DOWN, stored with an `enum`.
 - Cages cannot be powered off if they contain dinosaurs.
+- Carnivores can't be mixed with herbivores in the same cage.
 - Dinosaurs cannot be created/edited into a cage that is powered down or at capacity.
 - Extra: This wasn't mentioned, but it made sense to prevent deletion of a cage that had dinosaurs in it.
 - Must be able to query a listing of dinosaurs in a specific cage. Example cage `show` response:
