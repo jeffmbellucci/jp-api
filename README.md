@@ -24,6 +24,6 @@ What I did not get to:
 
 #### I decided I would deploy this to Heroku since I've gotten pretty fast at it, so you can play with it live, if you want. The root url goes to the cage index, so you can get a quick view of all the cage statuses, which I would think would be important, based on the movie plot. :)
 
-[All cage statuses](https://jurassic-api.herokuapp.com/)
-[First example cage](https://jurassic-api.herokuapp.com/cages/1)
+[All cage statuses](https://jurassic-api.herokuapp.com/)<br>
+[First example cage](https://jurassic-api.herokuapp.com/cages/1)<br>
 [First example dinosaur](https://jurassic-api.herokuapp.com/dinosaurs/1)
