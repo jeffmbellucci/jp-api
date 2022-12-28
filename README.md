@@ -1,22 +1,22 @@
 # Jurassic Park API
 
-- API is built with Rails 7, Ruby 3.1.2 and GIT
-- Database is Postgres
+- API is built with Rails 7, Ruby 3.1.2 and GIT.
+- Database is Postgres.
 - There is an included `seeds.rb` file that can be run after DB setup/migration to populate the DB with all the required dinosaur species and some cages.
 
-- I got back home last night from family Xmas get togethers, and this is what I was able to get finished in about 2ish hours this afternoon:
+- I got done with family Xmas obligations last night, and this is what I was able to get finished in about 2ish hours this afternoon:
 
 - Cages have a maximum capacity for how many dinosaurs it can hold.
-- Cages know how many dinosaurs are contained via `dinosaur_count` in response body
+- Cages know how many dinosaurs are contained via `dinosaur_count` key in response body.
 - Cages have a power status of ACTIVE or DOWN, stored with an `enum`.
 - Cages cannot be powered off if they contain dinosaurs.
-- Dinosaurs cannot be moved into a cage that is powered down.
+- Dinosaurs cannot be created/edited into a cage that is powered down or at capacity.
 - Must be able to query a listing of dinosaurs in a specific cage. Example cage `show` response:
 ```javascript
 {"cage":{"id":1,"power_status":"active","capacity":6,"created_at":"2022-12-27T21:41:52.761Z","updated_at":"2022-12-27T21:41:52.761Z"},"dinosaurs":[{"id":1,"name":"Rex","species":"tyrannosaurus","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.800Z","updated_at":"2022-12-27T21:41:52.800Z"},{"id":2,"name":"Blue","species":"velociraptor","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.809Z","updated_at":"2022-12-27T21:41:52.809Z"},{"id":3,"name":"Spiny","species":"spinosaurus","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.813Z","updated_at":"2022-12-27T21:41:52.813Z"},{"id":4,"name":"Meg","species":"megalosaurus","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.818Z","updated_at":"2022-12-27T21:41:52.818Z"}],"dinosaur_count":4}
 ```
 What I partially got to:
-- *Automated tests that ensure the business logic implemented is correct.*  There are some automated tests that I made sure are all passing when you run `rake tests`, but getting to comprehensively testing all edge cases and scenarios would have taken a fair amount me longer if I'm being honest.  I know testing is important, and I usually have solid test coverage with enterprise code, but I wanted to get the majority of the requested functionality working.  If this was a business API, I would have used additional time to add muchmore testing before considering deploying it.
+- *Automated tests that ensure the business logic implemented is correct.*  There are some automated tests that I made sure are all passing when you run `rake tests`, but getting to comprehensively testing all edge cases and scenarios would have taken a fair amount me longer if I'm being honest.  I know testing is important, and I usually have solid test coverage with enterprise code, but I wanted to get the majority of the requested functionality working.  If this was an enterprise API, I would have used additional time to add muchmore testing before considering deploying it.
 
 What I did not get to:
 - *When querying dinosaurs or cages they should be filterable on their attributes*
