@@ -12,7 +12,7 @@
 - Cages cannot be powered off if they contain dinosaurs.
 - Carnivores can't be mixed with herbivores in the same cage.
 - Dinosaurs cannot be created/edited into a cage that is powered down or at capacity.
-- Extra: This wasn't mentioned, but it made sense to prevent deletion of a cage that had dinosaurs in it.
+- Extra: This wasn't mentioned, but it made sense to prevent deletion of a cage that had dinosaurs in it, or to create a dinosaur that doesn't have an associated cage.  (I mean who would make a real dinosaur without knowing what cage it was going into, right?)
 - Must be able to query a listing of dinosaurs in a specific cage. Example cage `show` response:
 ```javascript
 {"cage":{"id":1,"power_status":"active","capacity":6,"created_at":"2022-12-27T21:41:52.761Z","updated_at":"2022-12-27T21:41:52.761Z"},"dinosaurs":[{"id":1,"name":"Rex","species":"tyrannosaurus","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.800Z","updated_at":"2022-12-27T21:41:52.800Z"},{"id":2,"name":"Blue","species":"velociraptor","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.809Z","updated_at":"2022-12-27T21:41:52.809Z"},{"id":3,"name":"Spiny","species":"spinosaurus","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.813Z","updated_at":"2022-12-27T21:41:52.813Z"},{"id":4,"name":"Meg","species":"megalosaurus","diet":"carnivore","cage_id":1,"created_at":"2022-12-27T21:41:52.818Z","updated_at":"2022-12-27T21:41:52.818Z"}],"dinosaur_count":4}
