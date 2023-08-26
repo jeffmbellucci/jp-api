@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DinosaursController < ApplicationController
-  before_action :set_dinosaur, only: %i[ show update destroy ]
+  before_action :set_dinosaur, only: %i[show update destroy]
 
   # GET /dinosaurs
   def index
@@ -39,13 +41,14 @@ class DinosaursController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dinosaur
-      @dinosaur = Dinosaur.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def dinosaur_params
-      params.require(:dinosaur).permit(:name, :species, :diet, :cage_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_dinosaur
+    @dinosaur = Dinosaur.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def dinosaur_params
+    params.require(:dinosaur).permit(:name, :species, :diet, :cage_id)
+  end
 end

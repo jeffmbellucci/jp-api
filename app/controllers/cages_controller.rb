@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CagesController < ApplicationController
-  before_action :set_cage, only: %i[ show update destroy ]
+  before_action :set_cage, only: %i[show update destroy]
 
   # GET /cages
   def index
@@ -26,8 +28,8 @@ class CagesController < ApplicationController
 
   # PATCH/PUT /cages/1
   def update
-    if @cage.has_dinosaurs? && cage_params[:power_status] == "down"
-      @cage.errors[:base] << "Cannot power down cage with dinosaurs in it."
+    if @cage.has_dinosaurs? && cage_params[:power_status] == 'down'
+      @cage.errors.add(:base, 'Cannot power down cage with dinosaurs in it.')
       render json: @cage.errors, status: :unprocessable_entity
     elsif @cage.update(cage_params)
       render json: @cage
@@ -39,7 +41,7 @@ class CagesController < ApplicationController
   # DELETE /cages/1
   def destroy
     if @cage.has_dinosaurs?
-      @cage.errors[:base] << "Cannot destroy cage with dinosaurs in it."
+      @cage.errors.add(:base, 'Cannot power down cage with dinosaurs in it.')
       render json: @cage.errors, status: :unprocessable_entity
     else
       @cage.destroy
@@ -47,11 +49,12 @@ class CagesController < ApplicationController
   end
 
   private
-    def set_cage
-      @cage = Cage.find(params[:id])
-    end
 
-    def cage_params
-      params.require(:cage).permit(:power_status, :capacity)
-    end
+  def set_cage
+    @cage = Cage.find(params[:id])
+  end
+
+  def cage_params
+    params.require(:cage).permit(:power_status, :capacity)
+  end
 end

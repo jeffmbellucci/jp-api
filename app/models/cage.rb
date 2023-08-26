@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Cage < ApplicationRecord
   has_many :dinosaurs
 
@@ -11,7 +13,7 @@ class Cage < ApplicationRecord
   end
 
   def has_dinosaurs?
-     dinosaur_count > 0
+    dinosaur_count.positive?
   end
 
   def remaining_capacity
@@ -19,7 +21,7 @@ class Cage < ApplicationRecord
   end
 
   def full?
-    remaining_capacity.zero? 
+    remaining_capacity.zero?
   end
 
   def space_available?
